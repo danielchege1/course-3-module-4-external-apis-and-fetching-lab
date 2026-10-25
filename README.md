@@ -51,8 +51,10 @@ to request data from the National Weather Service Alerts API:
 `https://api.weather.gov/alerts/active?area=${STATE_ABBR}`
 ```
 
-Replace `STATE_ABBR` with the user’s input value. Handle network and API errors
-gracefully.
+Replace `STATE_ABBR` with the user’s input value. The app trims whitespace and
+normalizes the abbreviation to uppercase, then checks that it contains exactly two
+letters before requesting data. Handle network, unsuccessful HTTP responses, and
+invalid API data gracefully.
 
 2. Display the Alerts
 
@@ -69,10 +71,12 @@ Each time the user fetches new data:
 
 * Clear the input field.
 * Update the weather alerts display with fresh data, removing any previous data.
+* Show each available `properties.headline` as a separate list item.
 
 4. Error Handling
 
-When something goes wrong (e.g., empty input, bad state code, or network failure):
+When something goes wrong (e.g., empty input, incorrectly formatted state code,
+unsuccessful API response, or network failure):
 
 * Display the message in the error.
    * from `.catch` this can be accessed using the `message` key:

@@ -1,79 +1,89 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 760px;
+  background-color: #f4f7f9;
+  color: #24313a;
   line-height: 1.6;
 }
 
 h1 {
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 28px;
 }
 
-/* Input Field and Button */
-#city-input {
+label {
   display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 80%;
+  margin: 0 auto 6px;
+  max-width: 400px;
+  font-weight: bold;
+}
+
+#state-input {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 12px;
+  padding: 12px;
+  width: 100%;
   max-width: 400px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #aab8c2;
+  border-radius: 6px;
 }
 
-#fetch-weather {
+#fetch-alerts {
   display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
+  margin: 0 auto 24px;
+  padding: 11px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #075985;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-#fetch-weather:hover {
-  background-color: #0056b3;
+#fetch-alerts:hover {
+  background-color: #0c4a6e;
 }
 
-/* Weather Display Section */
-#weather-display {
-  margin: 20px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 600px;
+#alerts-display {
+  margin: 0 auto;
+  padding: 16px 20px;
   background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d5dfe5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(20, 45, 60, 0.08);
 }
 
-/* Error Message */
+#alerts-display:empty {
+  display: none;
+}
+
+#alerts-display p {
+  margin: 0 0 8px;
+  font-weight: bold;
+}
+
+#alerts-display ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
 #error-message {
-  color: red;
+  color: #a11b1b;
   font-weight: bold;
   text-align: center;
-  margin-top: 10px;
+  margin: 12px auto;
 }
 
-/* Hidden Class for Error Handling */
 .hidden {
   display: none;
 }
 
-/* BONUS: Loading Spinner */
-#loading-spinner {
-  display: none;
-  margin: 20px auto;
-  text-align: center;
-}
-
-#loading-spinner img {
-  width: 50px;
-  height: 50px;
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
 }

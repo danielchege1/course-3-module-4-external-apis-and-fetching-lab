@@ -8,10 +8,11 @@
 </head>
 <body>
   <h1>Weather Alerts App</h1>
-  <input type="text" id="state-input" placeholder="Enter state abbreviation">
+  <label for="state-input">U.S. state abbreviation (for example, NY)</label>
+  <input type="text" id="state-input" placeholder="Enter state abbreviation" maxlength="2" autocomplete="off">
   <button id="fetch-alerts">Get Weather Alerts</button>
-  <div id="alerts-display"></div>
-  <div id="error-message" class="hidden"></div>
+  <div id="alerts-display" aria-live="polite"></div>
+  <div id="error-message" class="hidden" role="alert"></div>
   <script src="./index.js"></script>
 </body>
 </html>
